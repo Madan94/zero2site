@@ -1,0 +1,1703 @@
+    /* Importing Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+    /* General Reset */
+    html, body {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    section{
+      padding-top:80px !important;
+    }
+
+    body {
+        font-family: "Poppins", serif !important;
+        font-style: normal;
+    }
+
+    /* Header Styling */
+    .dzyhdr-header {
+      width: 100%;
+      background-color: #fff;
+      padding: 12px 18px;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      z-index: 10; 
+      transition: all 0.3s ease; 
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 1; 
+      transition: opacity 0.3s ease, top 0.3s ease;
+    }
+
+    /* Logo Styling */
+    .dzyhdr-logo h2 {
+      font-size: 30px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    /* Navigation Menu */
+    .dzyhdr-nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    .dzyhdr-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+    }
+
+    .dzyhdr-nav ul li a {
+      text-decoration: none;
+      color: #737373;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+
+    .dzyhdr-nav ul li a:hover {
+      color: #000;
+    }
+
+    /* Button Styling */
+    .dzyhdr-btn {
+      text-decoration: none;
+      background-color: #000;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .dzyhdr-btn:hover {
+      background-color: #333;
+      color: #9d8df7 !important;;
+    }
+
+    /* Hamburger Menu */
+    .dzyhdr-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .dzyhdr-hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #000;
+      transition: all 0.3s ease;
+    }
+
+    .btn1{
+      background-color: #1d44f9;
+      color:#fff;
+      transition: .3s;
+      cursor:pointer;
+    }
+
+    /* Mobile Menu */
+    @media screen and (max-width: 768px) {
+      .dzyhdr-nav {
+        display: none;
+        position: absolute;
+        top: 100%; /* Place it below the header */
+        right: 0;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        z-index: 5; /* Ensure it doesn't overlap other elements */
+      }
+
+      .dzyhdr-nav.active {
+        display: flex; /* Show the menu */
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dzyhdr-nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dzyhdr-nav ul li {
+        margin-bottom: 15px;
+      }
+
+      .dzyhdr-hamburger {
+        display: flex;
+      }
+
+      /* Hamburger Animation */
+      .dzyhdr-hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .dzyhdr-hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .dzyhdr-hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
+    /* Sticky Navbar and Blur Effect on Scroll */
+    .dzyhdr-header.sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 30px;
+      background-color: rgba(255, 255, 255, 0.8); /* Slight opacity for blur effect */
+    }
+
+    /* Hero Section */
+    .DZY-hero-section {
+      padding: 50px 0;
+    }
+
+    /* Fade In Image */
+    .fade-container {
+      position: relative;
+    }
+
+    .fade-image {
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+  .fade-container{
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 0px;
+  }
+  .fade-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeInAnimation 3s ease-in-out forwards;
+  }
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .DZY-hero-section {
+    background: linear-gradient(45deg, #eeeeee, #ffffff);; /* Light gray for a clean, modern look */
+    padding: 3rem 0;
+    overflow: hidden; /* Prevent image overflow outside the section */
+  }
+
+  .DZY-hero-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #212529; /* Dark shade for contrast */
+    display: inline-block;
+    position: relative; /* Ensure span will be positioned within the heading */
+  }
+
+  .DZY-hero-paragraph {
+    font-size: 1.2rem;
+    color: #6c757d; /* Subtle text color */
+  }
+
+  span {
+    color: #9d8df7;
+  }
+
+  .DZY-hero-button {
+    background-color: #000;
+    color: #fff;
+    border: none !important;
+    display: flex;
+    justify-content: center;
+    margin-right:5px;
+    align-items: center; /* Perfect centering of the content inside the circle */
+    text-align: center;
+    font-size: 32px; /* Adjust the font size */
+    transition: all 0.6s ease; /* Smooth transition for width, height, and border-radius */
+    text-decoration: none;
+    position: relative; 
+    border-radius: 25px !important; /* Change to a capsule shape on hover */
+    width: 200px; /* Expand the width */
+    height: 50px; /* Adjust the height for capsule shape */
+    padding: 10px 30px; /* Adjust padding for a wider button *//* Allow positioning of arrow inside the button */
+  }
+
+  /* Arrow Icon inside the button */
+  .DZY-arrow-icon {
+    font-size: 32px; /* Increase the font size for the arrow */
+    color: white; /* Set arrow color */
+    position: absolute; /* Absolutely position the arrow inside the button */
+    visibility: visible;
+  }
+
+  /* Text inside the button when hovered */
+  .DZY-button-text {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .DZY-hero-image {
+    max-width: 150%; /* Allow the image to extend beyond its container */
+    margin-left: 0px; /* Move the image left to overlap with text */
+    z-index: 1; /* Push the image behind the text */
+    position: relative;
+    border-radius: 0.5rem; /* Rounded corners for a modern look */
+  }
+
+  /* Animation for letter-by-letter reveal */
+  .DZY-animate-span {
+    display: inline; /* Ensure span acts like an inline element */
+    position: relative; /* Allow positioning of each letter */
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 0.2rem; 
+    word-spacing: normal;/* Add padding to ensure spacing */
+  }
+
+  .DZY-animate-span span {
+    display: inline-block;
+    opacity: 0;
+    animation: letterReveal 0.6s ease forwards;
+  }
+
+  @keyframes letterReveal {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .DZY-hero-image {
+      max-width: 160%; /* Reset for smaller screens */ 
+      margin-left: 0; /* Remove overlap for small screens */
+    }
+  }
+
+  .DZY-stats-section {
+    font-family: 'Roboto', sans-serif;
+    background: #000 !important;
+  }
+
+  .fact-text{
+    font-size: 34px;
+    font-weight: 600;
+  }
+
+  .DZY-stat-box {
+    padding: 20px;
+    background: #000;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    height: 100%; /* Ensure equal height */
+  }
+ .DZY-stat-box:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .DZY-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f8f9fa;
+  }
+
+  .DZY-stat-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ced4da;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+    .DZY-card-container {
+        padding: 2rem 0;
+    }
+    .DZY-card {
+        border-radius: 15px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .DZY-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .DZY-img-wrapper {
+        overflow: hidden; /* Ensures rounded corners cut off the image */
+        border-radius: 15px; /* Apply rounded corners to wrapper */
+    }
+    .DZY-card-img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    .DZY-card-title {
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+    .DZY-card-text {
+        font-size: 0.95rem;
+        color: #555;
+    }
+ /* Yellow Rating Style */
+    .rating {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1rem;
+    }
+    .rating-number {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #000000;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+    }
+
+    .about{
+      width:100%;
+      background:#151718;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      padding:40px;
+    }
+  
+    .all-text{
+      width:600px;
+      max-width: 100%;
+      padding:0 10px;
+    }
+  
+    .about-section img{
+      width:580px;
+      max-width:100%;
+      height:auto;
+      padding:0 10px;
+    }
+  
+    .about-section{
+      width:1290px;
+      max-width:95%;
+      margin:0 auto;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content: space-around;
+    }
+  
+    .all-text h4{
+      font-size:18px;
+      color:#777777;
+      letter-spacing: 1px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+  
+    .all-text h1{
+      font-size: 45px;
+      font-weight:700;
+      margin-bottom:20px;
+      color:rgb(239, 239, 8);
+    }
+  
+    .all-text p{
+      font-size:16px;
+      color:#fff;
+      line-height: 30px;
+      margin-bottom:35px;
+    }
+  
+    .btn button{
+      background:#fff;
+      padding:20px 32px;
+      font-size: 16px;
+      font-weight: bold;
+      color:#111111;
+      border:none;
+      outline:none;
+      box-shadow: 0px 16px 32px 0px rgb(0 0 0 / 6%);
+      margin-right:20px;
+    }
+  
+    .btn button:hover{
+      background-color: #1d44f9;
+      color:#fff;
+      transition: .3s;
+      cursor:pointer;
+    }
+  
+    .btn .btn2{
+      background: #111111;
+      color:#fff;
+      border:1px solid #fff;
+    }
+
+    @media screen and (max-width:1250px){
+      .about{
+        width:100%;
+        height:auto;
+        padding:60px 0;
+      }
+
+      .all-text{
+        text-align: center;
+        margin-top:40px;
+      }
+    }
+
+    @media screen and (max-width:650px){
+      .about .about-section img{
+        margin-bottom:35px;
+      }
+      .all-text h1{
+        font-size: 45px;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Section Container */
+    .dzyc-nft-section {
+      position: relative;
+      padding: 140px 0; /* Increased padding for moving content down */
+      height: auto; /* Auto height to cover content */
+          margin: 50px 0;
+    }
+
+    /* Image Background (Placeholder) */
+    .dzyc-image-background {
+      position: absolute;
+      top: -200px;
+      right: -250px;
+      width: 700px;
+      height: 700px;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+
+    /* Text Content */
+    .dzyc-nft-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #212529;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dzyc-nft-title span {
+      color: #9d8df7;
+    }
+
+    .dzyc-nft-description {
+      color: #6c757d;
+      font-size: 1rem;
+      max-width: 60%;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Card Styles */
+    .dzyc-nft-card {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.3s ease;
+      position: absolute;
+      z-index: 3;
+    }
+
+    .dzyc-nft-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .dzyc-icon-container {
+      background: #9d8df7;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.3rem;
+    }
+
+    .dzyc-price-text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #212529;
+      margin-bottom: 0;
+    }
+
+    .dzyc-btc-rate {
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+
+    /* Cards Positioned Along the Curve */
+    .dzyc-card-1 {
+      top: 140px; /* Adjusted position */
+      right: 120px;
+      transform: rotate(-10deg);
+    }
+
+    .dzyc-card-2 {
+      top: 280px; /* Adjusted position */
+      right: 90px;
+      transform: rotate(-2deg);
+    }
+
+    .dzyc-card-3 {
+      top: 420px; /* Adjusted position */
+      right: 120px;
+      transform: rotate(8deg);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .dzyc-image-background {
+        width: 500px;
+        height: 500px;
+        right: -200px;
+        top: -150px;
+      }
+
+      .dzyc-card-1 {
+        top: 100px;
+        right: 80px;
+      }
+
+      .dzyc-card-2 {
+        top: 200px;
+        right: 60px;
+      }
+
+      .dzyc-card-3 {
+        top: 300px;
+        right: 80px;
+      }
+
+      .dzyc-nft-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* Importing Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+    /* General Reset */
+    html, body {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    section{
+      padding-top:80px !important;
+    }
+
+    body {
+        font-family: "Poppins", serif !important;
+        font-style: normal;
+    }
+
+    /* Header Styling */
+    .dzyhdr-header {
+      width: 100%;
+      background-color: #fff;
+      padding: 12px 18px;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      z-index: 10; 
+      transition: all 0.3s ease; 
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 1; 
+      transition: opacity 0.3s ease, top 0.3s ease;
+    }
+
+    /* Logo Styling */
+    .dzyhdr-logo h2 {
+      font-size: 30px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    /* Navigation Menu */
+    .dzyhdr-nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    .dzyhdr-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+    }
+
+    .dzyhdr-nav ul li a {
+      text-decoration: none;
+      color: #737373;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+
+    .dzyhdr-nav ul li a:hover {
+      color: #000;
+    }
+
+    /* Button Styling */
+    .dzyhdr-btn {
+      text-decoration: none;
+      background-color: #000;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .dzyhdr-btn:hover {
+      background-color: #333;
+      color: #9d8df7 !important;;
+    }
+
+    /* Hamburger Menu */
+    .dzyhdr-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .dzyhdr-hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #000;
+      transition: all 0.3s ease;
+    }
+
+    .btn1{
+      background-color: #1d44f9;
+      color:#fff;
+      transition: .3s;
+      cursor:pointer;
+    }
+
+    /* Mobile Menu */
+    @media screen and (max-width: 768px) {
+      .dzyhdr-nav {
+        display: none;
+        position: absolute;
+        top: 100%; /* Place it below the header */
+        right: 0;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        z-index: 5; /* Ensure it doesn't overlap other elements */
+      }
+
+      .dzyhdr-nav.active {
+        display: flex; /* Show the menu */
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dzyhdr-nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dzyhdr-nav ul li {
+        margin-bottom: 15px;
+      }
+
+      .dzyhdr-hamburger {
+        display: flex;
+      }
+
+      /* Hamburger Animation */
+      .dzyhdr-hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .dzyhdr-hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .dzyhdr-hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
+    /* Sticky Navbar and Blur Effect on Scroll */
+    .dzyhdr-header.sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 30px;
+      background-color: rgba(255, 255, 255, 0.8); /* Slight opacity for blur effect */
+    }
+
+    /* Hero Section */
+    .DZY-hero-section {
+      padding: 50px 0;
+    }
+
+    /* Fade In Image */
+    .fade-container {
+      position: relative;
+    }
+
+    .fade-image {
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+  .fade-container{
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 0px;
+  }
+  .fade-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeInAnimation 3s ease-in-out forwards;
+  }
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .DZY-hero-section {
+    background: linear-gradient(45deg, #eeeeee, #ffffff);; /* Light gray for a clean, modern look */
+    padding: 3rem 0;
+    overflow: hidden; /* Prevent image overflow outside the section */
+  }
+
+  .DZY-hero-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #212529; /* Dark shade for contrast */
+    display: inline-block;
+    position: relative; /* Ensure span will be positioned within the heading */
+  }
+
+  .DZY-hero-paragraph {
+    font-size: 1.2rem;
+    color: #6c757d; /* Subtle text color */
+  }
+
+  span {
+    color: #9d8df7;
+  }
+
+  .DZY-hero-button {
+    background-color: #000;
+    color: #fff;
+    border: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Perfect centering of the content inside the circle */
+    text-align: center;
+    font-size: 32px; /* Adjust the font size */
+    transition: all 0.6s ease; /* Smooth transition for width, height, and border-radius */
+    text-decoration: none;
+    position: relative; 
+    border-radius: 25px !important; /* Change to a capsule shape on hover */
+    width: 200px; /* Expand the width */
+    height: 50px; /* Adjust the height for capsule shape */
+    padding: 10px 30px; /* Adjust padding for a wider button *//* Allow positioning of arrow inside the button */
+  }
+
+  /* Arrow Icon inside the button */
+  .DZY-arrow-icon {
+    font-size: 32px; /* Increase the font size for the arrow */
+    color: white; /* Set arrow color */
+    position: absolute; /* Absolutely position the arrow inside the button */
+    visibility: visible;
+  }
+
+  /* Text inside the button when hovered */
+  .DZY-button-text {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .DZY-hero-image {
+    max-width: 150%; /* Allow the image to extend beyond its container */
+    margin-left: 0px; /* Move the image left to overlap with text */
+    z-index: 1; /* Push the image behind the text */
+    position: relative;
+    border-radius: 0.5rem; /* Rounded corners for a modern look */
+  }
+
+  /* Animation for letter-by-letter reveal */
+  .DZY-animate-span {
+    display: inline; /* Ensure span acts like an inline element */
+    position: relative; /* Allow positioning of each letter */
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 0.2rem; 
+    word-spacing: normal;/* Add padding to ensure spacing */
+  }
+
+  .DZY-animate-span span {
+    display: inline-block;
+    opacity: 0;
+    animation: letterReveal 0.6s ease forwards;
+  }
+
+  @keyframes letterReveal {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .DZY-hero-image {
+      max-width: 160%; /* Reset for smaller screens */ 
+      margin-left: 0; /* Remove overlap for small screens */
+    }
+  }
+
+  .DZY-stats-section {
+    font-family: 'Roboto', sans-serif;
+    background: #000 !important;
+  }
+
+  .fact-text{
+    font-size: 34px;
+    font-weight: 600;
+  }
+
+  .DZY-stat-box {
+    padding: 20px;
+    background: #000;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    height: 100%; /* Ensure equal height */
+  }
+ .DZY-stat-box:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .DZY-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f8f9fa;
+  }
+
+  .DZY-stat-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ced4da;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+    .DZY-card-container {
+        padding: 2rem 0;
+    }
+    .DZY-card {
+        border-radius: 15px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .DZY-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .DZY-img-wrapper {
+        overflow: hidden; /* Ensures rounded corners cut off the image */
+        border-radius: 15px; /* Apply rounded corners to wrapper */
+    }
+    .DZY-card-img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    .DZY-card-title {
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+    .DZY-card-text {
+        font-size: 0.95rem;
+        color: #555;
+    }
+ /* Yellow Rating Style */
+    .rating {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1rem;
+    }
+    .rating-number {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #000000;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+    }
+
+    .about{
+      width:100%;
+      background:#151718;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      padding:40px;
+    }
+  
+    .all-text{
+      width:600px;
+      max-width: 100%;
+      padding:0 10px;
+    }
+  
+    .about-section img{
+      width:580px;
+      max-width:100%;
+      height:auto;
+      padding:0 10px;
+    }
+  
+    .about-section{
+      width:1290px;
+      max-width:95%;
+      margin:0 auto;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content: space-around;
+    }
+  
+    .all-text h4{
+      font-size:18px;
+      color:#777777;
+      letter-spacing: 1px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+  
+    .all-text h1{
+      font-size: 45px;
+      font-weight:700;
+      margin-bottom:20px;
+      color:rgb(239, 239, 8);
+    }
+  
+    .all-text p{
+      font-size:16px;
+      color:#fff;
+      line-height: 30px;
+      margin-bottom:35px;
+    }
+  
+    .btn button{
+      background:#fff;
+      padding:20px 32px;
+      font-size: 16px;
+      font-weight: bold;
+      color:#111111;
+      border:none;
+      outline:none;
+      box-shadow: 0px 16px 32px 0px rgb(0 0 0 / 6%);
+      margin-right:20px;
+    }
+  
+    .btn button:hover{
+      background-color: #1d44f9;
+      color:#fff;
+      transition: .3s;
+      cursor:pointer;
+    }
+  
+    .btn .btn2{
+      background: #111111;
+      color:#fff;
+      border:1px solid #fff;
+    }
+
+    @media screen and (max-width:1250px){
+      .about{
+        width:100%;
+        height:auto;
+        padding:60px 0;
+      }
+
+      .all-text{
+        text-align: center;
+        margin-top:40px;
+      }
+    }
+
+    @media screen and (max-width:650px){
+      .about .about-section img{
+        margin-bottom:35px;
+      }
+      .all-text h1{
+        font-size: 45px;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Section Container */
+    .dzyc-nft-section {
+      position: relative;
+      padding: 140px 0; /* Increased padding for moving content down */
+      height: auto; /* Auto height to cover content */
+          margin: 50px 0;
+    }
+
+    /* Image Background (Placeholder) */
+    .dzyc-image-background {
+      position: absolute;
+      top: -200px;
+      right: -250px;
+      width: 700px;
+      height: 700px;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+
+    /* Text Content */
+    .dzyc-nft-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #212529;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dzyc-nft-title span {
+      color: #9d8df7;
+    }
+
+    .dzyc-nft-description {
+      color: #6c757d;
+      font-size: 1rem;
+      max-width: 60%;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Card Styles */
+    .dzyc-nft-card {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.3s ease;
+      position: absolute;
+      z-index: 3;
+    }
+
+    .dzyc-nft-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .dzyc-icon-container {
+      background: #9d8df7;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.3rem;
+    }
+
+    .dzyc-price-text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #212529;
+      margin-bottom: 0;
+    }
+
+    .dzyc-btc-rate {
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+
+    /* Cards Positioned Along the Curve */
+    .dzyc-card-1 {
+      top: 140px; /* Adjusted position */
+      right: 120px;
+      transform: rotate(-10deg);
+    }
+
+    .dzyc-card-2 {
+      top: 280px; /* Adjusted position */
+      right: 90px;
+      transform: rotate(-2deg);
+    }
+
+    .dzyc-card-3 {
+      top: 420px; /* Adjusted position */
+      right: 120px;
+      transform: rotate(8deg);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .dzyc-image-background {
+        width: 500px;
+        height: 500px;
+        right: -200px;
+        top: -150px;
+      }
+
+      .dzyc-card-1 {
+        top: 100px;
+        right: 80px;
+      }
+
+      .dzyc-card-2 {
+        top: 200px;
+        right: 60px;
+      }
+
+      .dzyc-card-3 {
+        top: 300px;
+        right: 80px;
+      }
+
+      .dzyc-nft-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .dzyc-image-background {
+        display: none; /* Hide image on smaller screens */
+      }
+
+      .dzyc-nft-card {
+        position: static;
+        margin: 10px 15px 10px 15px;
+        transform: none;
+      }
+
+      .dzyc-nft-section {
+        text-align: center; /* Center the content */
+        padding: 60px 0;
+      }
+
+      .dzyc-nft-description {
+        text-align: center; /* Center the description on mobile */
+        max-width: 100%; /* Allow the description to take full width */
+      }
+    }
+
+  .highlight{
+    color: #FFD700;
+    font-family: "Inter", sans-serif;
+  }
+
+    /* Services Section */
+    .service {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .service-heading {
+      margin-bottom: 30px;
+    }
+
+    .service-heading .main-heading {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #faff56;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: fadeInDown 0.8s ease-in-out;
+    }
+
+    .offer-text {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #fff;
+      margin-bottom: 40px;
+      animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    /* Services Container Styling */
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    /* Individual Service Card */
+    .service-card1 {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      text-align: left;
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUp 0.8s ease-in-out;
+    }
+
+    .service-card1:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card1 .icon img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .service-card1 h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #344cb7;
+      margin-bottom: 15px;
+      animation: fadeInRight 0.8s ease-in-out;
+    }
+
+    .service-card1 p {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.6;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .service-heading .main-heading {
+        font-size: 2rem;
+      }
+
+      .service-card1 {
+        padding: 20px;
+      }
+
+      .service-card1 h1 {
+        font-size: 1.3rem;
+      }
+
+      .service-card1 p {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .icon img {
+      height: 15vh;
+      padding-bottom: 10px;
+    }
+  
+
+  /* Gallery Container */
+  .dzc-gallery-carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 100px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #f5f5f5;
+  }
+
+  /* Carousel Wrapper */
+  .dzc-carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Individual Slide */
+  .dzc-carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  /* Image Style */
+  .dzc-carousel-img {
+    width: 100%;
+    height: 500px; /* Set a fixed height */
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover Effect on Images */
+  .dzc-carousel-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .testimonial-img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+  }
+
+  /* Responsive Optimization */
+  @media (max-width: 768px) {
+    .dzc-gallery-carousel {
+      max-width: 100%;
+      margin: 50px Auto;
+    }
+
+    .dzc-carousel-slide {
+      padding: 5px;
+    }
+  }
+
+.qa-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.qa-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #555;
+}
+
+.qa-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.qa-item:last-child {
+  border-bottom: none;
+}
+
+.qa-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.qa-question h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.toggle-icon {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  transition: transform 0.3s ease;
+}
+
+.qa-answer {
+  display: none;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.qa-answer p {
+  margin: 0;
+}
+
+.qa-item.open .qa-answer {
+  display: block;
+}
+
+.qa-item.open .toggle-icon {
+  transform: rotate(45deg);
+  color: #28a745;
+  }
+
+.DD-testimonial-section {
+  background: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+.DD-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+.DD-testimonial-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.DD-testimonial {
+  display: none;
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.DD-testimonial.active {
+  display: block;
+}
+.DD-quote {
+  font-style: italic;
+  color: #555;
+}
+.DD-client-info {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+.DD-client-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+.DD-client-name {
+  font-weight: bold;
+  color: #333;
+}
+.DD-controls {
+  margin-top: 20px;
+}
+.DD-controls button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px; 
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;  
+  width: auto;  
+  height: auto;  
+  min-width: 40px;  
+  min-height: 40px; 
+}
+
+.DD-controls button:hover {
+  background: #555;
+}
+
+  .contact {
+    padding: 50px 0;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    gap:3rem;
+  }
+  .contact-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap:6rem;
+  }
+  .contact-image {
+    width: 50%;
+    height: 100%;
+    margin-right: 20px;
+    object-fit: cover;
+  }
+  .contact-form {
+    width: 50%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .contact-form h2 {
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .btn-primary {
+    background-color: #1d44f9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: #1d44f9;
+    color: #fff;
+  }
