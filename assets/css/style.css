@@ -186,14 +186,32 @@
       .DZY-hero-section {
         padding: 20px 0;
       }
+
+      .DZY-hero-section .container{
+        display: flex;
+        flex-direction: column;
+        gap:5rem;
+        width:100%;
+        padding-top:80px;
+        background: none;
+      }
     }
 
     @media screen and (max-width: 480px) {
       .DZY-hero-section {
         padding: 10px 0;
       }
+
+      .DZY-hero-section .container{
+        display: flex;
+        flex-direction: column;
+        gap:5rem;
+        width:100%;
+        padding-top:80px;
+        background: none;
+      }
+
     }
-    
     .DZY-hero-section {
       padding: 50px 0;
     }
