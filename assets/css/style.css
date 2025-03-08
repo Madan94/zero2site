@@ -173,45 +173,7 @@
       background-color: rgba(255, 255, 255, 0.8); /* Slight opacity for blur effect */
     }
 
-    /* Responsive Hero Section */
-    .DZY-hero-section {
-      padding: 50px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    @media screen and (max-width: 768px) {
-      .DZY-hero-section {
-        padding: 20px 0;
-      }
-
-      .DZY-hero-section .container{
-        display: flex;
-        flex-direction: column;
-        gap:5rem;
-        width:100%;
-        padding-top:80px;
-        background: none;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .DZY-hero-section {
-        padding: 10px 0;
-      }
-
-      .DZY-hero-section .container{
-        display: flex;
-        flex-direction: column;
-        gap:5rem;
-        width:100%;
-        padding-top:80px;
-        background: none;
-      }
-
-    }
+    /* Hero Section */
     .DZY-hero-section {
       padding: 50px 0;
     }
@@ -256,9 +218,12 @@
     }
   }
   .DZY-hero-section {
-    background: linear-gradient(45deg, #eeeeee, #ffffff);; /* Light gray for a clean, modern look */
+    background: linear-gradient(45deg, #eeeeee, #ffffff); 
     padding: 3rem 0;
-    overflow: hidden; /* Prevent image overflow outside the section */
+    overflow: hidden;
+    @media (max-width: 768px) {
+      padding: 2rem 0; 
+    }
   }
 
   .DZY-hero-heading {
